@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int searchNode(int data) {
+    int position = 1;
+    node* temp = head;
+    while (temp != NULL) {
+        if (temp->data == data) {
+            return position;
+        }
+        position++;
+        temp = temp->next;
+    }
+    return -1; // Return -1 if node is not found
+}
+
+int main(){
+int pos;
+cout << "Enter the data of the node to search: ";
+cin >> pos;
+int foundPos = searchNode(pos);
+if (foundPos != -1) {
+    cout << "Node found at position " << foundPos << endl;
+} else {
+    cout << "Node not found" << endl;
+}
+return 0;
+}
